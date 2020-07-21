@@ -1,0 +1,18 @@
+{
+    "width": "256",
+    "height": "256",
+    "background": "map.png",
+    "plugin": [],
+    "draw": [
+        {
+            "text": "§bWelcome to MCGD.\n§1You can use Formatting Codes \n§1 in your text.\n§00-black §11-dark_blue\n§22-dark_green §33-dark_aqua\n§44-dark_red §55-dark_purple\n§66-gold §77-gray§88-dark_gray\n§99-blue §aa-green §bb-aqua\n§cc-red §dd-light_purple §ee-yellow \n§ff-white\n§bYes,It is Minecraft Formatting\n§0//§3I will support more code.\n§bIf you like it,Please star me in\n§bgithub.Thank you very much.",
+            "size": 12,
+            "x": 12,
+            "y": 12,
+            "color": "#000000",
+            "font": "msyh.ttf",
+            "angle": 0
+        }
+    ],
+    "img": []
+}

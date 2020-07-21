@@ -1,0 +1,34 @@
+{
+    "width": "256",
+    "height": "256",
+    "background": "map.png",
+    "plugin": [
+        {
+            "plugin": "Html",
+            "name": "D",
+            "input": {
+                "html": "<script>document.write(\"<h1>Hello,DMI!<\/h1>\");<\/script>"
+            }
+        }
+    ],
+    "draw": [
+        {
+            "text": "§b欢迎使用DMI\n§1你可以在文本中使用颜色代码§x\n§00黑色 §11深蓝色 §22深绿色 §33湖蓝色\n§44深红色 §55紫色 §66金色 §77灰色\n§88深灰色 §99蓝色 §aa绿色 §bb天蓝色\n§cc红色 §dd粉红色 §ee黄色 §ff白色\n§b这就是MC中的颜色代码\n§0\/\/§3格式代码我会添加的\n§b我顺便非常不要脸的求STAR\n§b点了也不会变胖",
+            "size": 12,
+            "x": 12,
+            "y": 12,
+            "color": "#000000",
+            "font": "msyh.ttf",
+            "angle": 0
+        }
+    ],
+    "img": [
+        {
+            "x": 30,
+            "y": 190,
+            "width": 1024,
+            "height": 67,
+            "data": "D->image"
+        }
+    ]
+}
