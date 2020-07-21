@@ -4,15 +4,15 @@
  * @see https://github.com/hhxsv5/laravel-s/blob/master/Settings.md  English
  */
 return [
-    'listen_ip'                => env('LARAVELS_LISTEN_IP', '127.0.0.1'),
-    'listen_port'              => env('LARAVELS_LISTEN_PORT', 5200),
+    'listen_ip'                => env('SERVER_LISTEN_IP', '127.0.0.1'),
+    'listen_port'              => env('SERVER_LISTEN_PORT', 5200),
     'socket_type'              => defined('SWOOLE_SOCK_TCP') ? SWOOLE_SOCK_TCP : 1,
     'enable_coroutine_runtime' => false,
-    'server'                   => env('LARAVELS_SERVER', 'LaravelS'),
-    'handle_static'            => env('LARAVELS_HANDLE_STATIC', false),
+    'server'                   => env('SERVER_NAME', 'DMI'),
+    'handle_static'            => true,
     'laravel_base_path'        => env('LARAVEL_BASE_PATH', base_path()),
     'inotify_reload'           => [
-        'enable'        => env('LARAVELS_INOTIFY_RELOAD', false),
+        'enable'        => env('SERVER_INOTIFY_RELOAD', false),
         'watch_path'    => base_path(),
         'file_types'    => ['.php'],
         'excluded_dirs' => [],
@@ -33,7 +33,7 @@ return [
         //],
     ],
     'timer'                    => [
-        'enable'        => env('LARAVELS_TIMER', false),
+        'enable'        => env('SERVER_TIMER', false),
         'jobs'          => [
             // Enable LaravelScheduleJob to run `php artisan schedule:run` every 1 minute, replace Linux Crontab
             //\Hhxsv5\LaravelS\Illuminate\LaravelScheduleJob::class,
@@ -55,15 +55,15 @@ return [
         ],
     ],
     'swoole'                   => [
-        'daemonize'          => env('LARAVELS_DAEMONIZE', false),
+        'daemonize'          => env('SERVER_DAEMONIZE', false),
         'dispatch_mode'      => 2,
-        'reactor_num'        => env('LARAVELS_REACTOR_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 4),
-        'worker_num'         => env('LARAVELS_WORKER_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 8),
-        //'task_worker_num'    => env('LARAVELS_TASK_WORKER_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 8),
+        'reactor_num'        => env('SERVER_REACTOR_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 4),
+        'worker_num'         => env('SERVER_WORKER_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 8),
+        //'task_worker_num'    => env('SERVER_TASK_WORKER_NUM', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 8),
         'task_ipc_mode'      => 1,
-        'task_max_request'   => env('LARAVELS_TASK_MAX_REQUEST', 8000),
+        'task_max_request'   => env('SERVER_TASK_MAX_REQUEST', 8000),
         'task_tmpdir'        => @is_writable('/dev/shm/') ? '/dev/shm' : '/tmp',
-        'max_request'        => env('LARAVELS_MAX_REQUEST', 8000),
+        'max_request'        => env('SERVER_MAX_REQUEST', 8000),
         'open_tcp_nodelay'   => true,
         'pid_file'           => storage_path('laravels.pid'),
         'log_file'           => storage_path(sprintf('logs/swoole-%s.log', date('Y-m'))),
