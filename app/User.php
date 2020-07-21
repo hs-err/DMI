@@ -23,6 +23,7 @@ use Laravel\Lumen\Auth\Authorizable;
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static Builder|User query()
+ * @method static Builder|User where($column, $operator = null, $value = null, $boolean = 'and')
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereEmail($value)
  * @method static Builder|User whereId($value)
@@ -34,7 +35,6 @@ use Laravel\Lumen\Auth\Authorizable;
 class User extends Model implements AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
-
     /**
      * The attributes that are mass assignable.
      *
